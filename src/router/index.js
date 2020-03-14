@@ -13,21 +13,13 @@ export default new Router({
   mode:'history',
   routes: [
     {
-      path: '/goods',
+      path: '/',
       name: 'GoodsList',
-      component: GoodsList,
-      children:[
-        {
-          path: 'title',
-          name: 'title',
-          component: Title
-        }
-        , {
-          path: 'image',
-          name: 'image',
-          component: Image
-        }
-      ]
+      components: {
+        default:GoodsList,
+        Title:Title,
+        Image:Image
+      },
     },
     {
       path: '/cart',
